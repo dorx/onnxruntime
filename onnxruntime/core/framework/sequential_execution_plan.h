@@ -67,6 +67,8 @@ struct SequentialExecutionPlan {
 
   // to_be_freed: vector elements represent indices of ml-values to be freed (as described above)
   std::vector<MLValueIndex> to_be_freed;
+
+  const OrtAllocatorInfo& GetLocation(size_t mlvalue_index) const { return allocation_plan[mlvalue_index].location; }
 };
 
 // Output details of an execution plan:
